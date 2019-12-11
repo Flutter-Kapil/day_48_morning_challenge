@@ -20,25 +20,51 @@ class Student {
 // PART 2
 // Write a function which prints 'Beginning Task n', delays for n seconds and prints
 // 'Completed Task n'
+delayForNSeconds(int n) async {
+  print('Beginning Task $n');
+  await Future.delayed(Duration(seconds: n));
+  print('Completed Task $n');
+}
 
 // PART 3
 // Create a new function which does the same thing as previous function but
 // without await keyword . (HINT: use '.then' method)
+delayForNSecondsUsingThen(int n) {
+  print('Beginning Task $n');
+  Future.delayed(Duration(seconds: n)).then((a) {
+    print('Completed Task $n');
+  });
+  ;
+}
 
 void main() {
-    print('---------------challenege 1 & 2----------');
-  var students = [Student('Ram',87),Student('Shyam',80),Student('Ghanshyam',91),];
-  students.forEach((object){
-  print('${object.name}: ${object.score}');
+  print('---------------challenege 1 & 2----------');
+  var students = [
+    Student('Ram', 87),
+    Student('Shyam', 80),
+    Student('Ghanshyam', 91),
+  ];
+  students.forEach((object) {
+    print('${object.name}: ${object.score}');
   });
-    print('---------------challenege 3----------');
-    print(students.reduce((curr, next) => curr.score > next.score? curr: next).name);
+  print('---------------challenege 3----------');
+  print(students
+      .reduce((curr, next) => curr.score > next.score ? curr : next)
+      .name);
 
-    print('---------------challenege 4----------');
-    students.sort((a,b)=>a.score.compareTo(b.score));
-    students.forEach((object){
-      print('${object.name}: ${object.score}');
-    });
+  print('---------------challenege 4----------');
+  students.sort((a, b) => a.score.compareTo(b.score));
+  students.forEach((object) {
+    print('${object.name}: ${object.score}');
+  });
+
+  print('---------------PART 2----------');
+//    delayForNSeconds(4);
+//    delayForNSeconds(2);
+
+  print('---------------PART 3----------');
+  delayForNSecondsUsingThen(4);
+  delayForNSecondsUsingThen(2);
 }
 //var testMap = {'1':243};
 //var allDays = List.generate(31, (i)=>i+1);
