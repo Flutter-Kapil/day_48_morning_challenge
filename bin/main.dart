@@ -25,4 +25,37 @@ class Student {
 // Create a new function which does the same thing as previous function but
 // without await keyword . (HINT: use '.then' method)
 
-void main() {}
+void main() {
+    print('---------------challenege 1 & 2----------');
+  var students = [Student('Ram',87),Student('Shyam',80),Student('Ghanshyam',91),];
+  students.forEach((object){
+  print('${object.name}: ${object.score}');
+  });
+    print('---------------challenege 3----------');
+    print(students.reduce((curr, next) => curr.score > next.score? curr: next).name);
+
+    print('---------------challenege 4----------');
+    students.sort((a,b)=>a.score.compareTo(b.score));
+    students.forEach((object){
+      print('${object.name}: ${object.score}');
+    });
+}
+//var testMap = {'1':243};
+//var allDays = List.generate(31, (i)=>i+1);
+//print(allDays);
+//var allDaysMap= allDays.asMap();
+//print(allDaysMap);
+//  List _sample = ['a','b','c'];
+//  _sample.asMap().forEach((index, value) => value=index);
+//  print(_sample);
+//  var stepsCount = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+//  var monthMap = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25, 26: 26, 27: 27, 28: 28, 29: 29, 30: 30, 31: 31};
+//
+//  monthMap[1]=12345;
+////  print(monthMap);
+//  stepsCount.forEach((item){
+//    monthMap[item]=item+2;
+//  });
+//  print(monthMap);
+//
+//}
